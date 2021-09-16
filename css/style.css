@@ -1,0 +1,565 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    color: #222222;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hide {
+    position: absolute;
+    top: -999999px;
+    left: -999999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#wrap {
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 75px;
+}
+
+#header {
+    height: 58px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 20px;
+}
+
+.logo a span {
+    display: block;
+    width: 33px;
+    height: 33px;
+    text-indent: -999999999px;
+    background-image: url(../img/sp_common.png);
+    background-size: 400px auto; /* 불러온 사진은 원본이지만 표현할 이미지는 반으로 줄인 크기이다. 큰 이미지를 줄여서 사용하는 이유는 화면을 확대했을 때 이미지가 깨지지않게 하기 위해서이다.*/
+    background-position: -35px -170px;
+}
+
+
+.logo a {
+    display: block;
+    padding: 5px;
+}
+
+.my_spot a {
+    font-size: 17px;
+    font-weight: 700;
+    color: #222;
+}
+
+.my_spot a::after {
+    content: "";
+    display: inline-block;
+    vertical-align: top;
+
+    width: 0;
+    height: 0;
+
+    border: 4px solid transparent;
+    border-top-color: #444;
+    border-top-width: 6px;
+    margin-top: 7px;
+    margin-left: 5px;
+}
+
+/* transparent는 투명이다. border: 4px solid transparent */
+
+/* 
+    border: 4px solid transparent;
+    border-top-color: #444
+    border-top-width: 6px; 밑으로 길이를 늘인다.
+
+    아래로 뾰족한 삼각형 만드는 방법
+    이렇게 만드는 이유는 화질이 변하지않아서 화면을 늘려도 좋은 화질로 볼 수 있다.
+ */
+
+.open_cart {
+    margin-right: 20px;
+}
+
+.open_cart a span {
+    display: block;
+    width: 26px;
+    height: 22px;
+    text-indent: -9999999px;
+    background-image: url(../img/sp_common.png);
+    background-size: 400px auto;
+    background-position: -80px 0;
+}
+
+.open_cart a {
+    display: block;
+    padding: 5px;
+}
+
+.gnb {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    z-index: 1000;
+    box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    background-color: #fff;
+}
+
+.gnb .order {
+    position: absolute;
+    left: 50%;
+    margin-left: -36px;
+    top: -15px;
+}
+
+.gnb .order a {
+    display: block;
+    width: 72px;
+    height: 72px;
+    background-color: #ff133d;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    padding-top: 13px;
+    box-sizing: border-box;
+    font-size: 11px;
+}
+
+.gnb .order a::before {
+    content: "";
+    display: block;
+    width: 31px;
+    height: 31px;
+    background-image: url(../img/sp_common.png);
+    background-size: 400px auto;
+    background-position: 0 -170px;
+    margin: 0 auto;
+}
+
+.gnb ul {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gnb .gL {
+    padding-right: 36px;
+}
+
+.gnb .gR {
+    padding-left: 36px;
+}
+
+.gnb li a {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    color: #333;
+    padding-top: 5px;
+}
+
+.gnb li a::before {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 26px;
+    background-image: url(../img/sp_common.png);
+    background-size: 400px auto;
+    margin: 0 auto; /* 사진 가운데 정렬 */
+}
+
+.gnb .g1 a::before {  
+    background-position: -109px 0;
+}
+
+.gnb .g2 a::before {  
+    background-position: -135px 0;
+}
+
+.gnb .g3 a::before {
+    background-position: -372px -170px;
+}
+
+.gnb .g4 a::before {
+    background-position: -192px 12px;
+}
+
+.top_navi {
+    height: 44px;
+}
+
+.top_navi ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10px;
+}
+
+.top_navi li a {
+    color: #222;
+    font-size: 15px;
+    line-height: 44px;
+    font-weight: 500;
+}
+
+#container img {
+    width: 100%;
+    height: auto;
+}
+
+.main_slide {
+    position: relative;
+}
+
+.main_slide_btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+}
+
+.main_slide_btn .pager {
+    font-size: 11px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.main_slide_btn .all_view a {
+    display: block;
+    width: 10px;
+    height: 10px;
+    text-indent: -9999999px;
+    padding: 5px 2px;
+}
+
+.main_slide_btn .all_view a::before {
+    content: "";
+    display: block;
+    background-color: #fff;
+    width: 2px;
+    height: 10px;
+    margin-left: 4px;
+}
+
+.main_slide_btn .all_view a::after {
+    content: "";
+    display: block;
+    background-color: #fff;
+    width: 10px;
+    height: 2px;
+    margin-top: -6px;
+}
+
+.main_order {
+    border-bottom: 2px solid #222;
+    padding: 25px 0;
+}
+
+.main_order ul {
+    display: flex;
+}
+
+.main_order li {
+    width: 50%;
+}
+
+.main_order li a {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #222;
+}
+
+.main_order li a::before {
+    content: "";
+    display: block;
+    width: 82px;
+    height: 72px;
+    background-image: url(../img/sp_common.png);
+    background-size: 400px auto;
+    margin: 0 auto 15px auto;
+}
+
+.main_order .or1 {
+    border-right: 1px solid #ccc;
+}
+
+.main_order .or1 a::before {
+    background-position: -196px -315px;
+}
+
+.main_order .or2 a::before {
+    background-position: -287px -315px;
+}
+/* 크기를 서로 맞춰주는 게 좋다. */
+
+.main_order li a span {
+    display: inline-block;
+    vertical-align: top;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #248ecc;
+    margin-top: 4px;
+    margin-left: 5px;
+    padding-top: 4px;
+    padding-left: 4px;
+    box-sizing: border-box;
+}
+
+.main_order li a span::after {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: rotate(-45deg);
+}
+
+.event {
+    margin: 35px 0;
+}
+
+.ev_top {
+    margin: 0 20px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ev_text {
+    font-size: 18px;
+    line-height: 1.5em;
+    color: #555;
+}
+
+.ev_text span {
+    font-weight: 500;
+    color: #222;
+}
+
+.btn_login a {
+    display: block;
+    padding: 6px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 17px;
+}
+
+.ev_list {
+    overflow: hidden;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.ev_list ul {
+    display: flex;
+    width: 150%;
+}
+
+.ev_btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.ev_btn p {
+    margin-left: 5px;
+}
+
+.ev_btn p a {
+    display: block;
+    width: 15px;
+    height: 28px;
+    text-indent: -999999999999px;
+    background-image: url(../img/sp_common.png);
+    background-size: 400px auto;
+}
+
+.ev_btn .prev a {
+    background-position: -310px 10px;
+}
+
+.ev_btn .next a {
+    background-position: -331px 10px;
+}
+
+.ev_btn .disable {
+    opacity: 0.5;
+}
+
+/* 모바일에서 좌우 여백을 줄 때는 padding을 주로 사용한다. 계산이 용이하기 때문 */
+
+.news {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+}
+
+.news ul {
+    padding: 0 20px;
+}
+
+.news ul li {
+    margin-bottom: 20px;
+}
+
+#footer {
+    padding-top: 15px;
+}
+
+.f1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px 10px 20px;
+}
+
+.f_menu ul {
+    display: flex;
+}
+
+.f_menu li {
+    margin-right: 10px;
+}
+
+.f_menu li a {
+    font-size: 11px;
+    color: #666;
+}
+
+.f_menu .point a {
+    color: #333;
+    font-weight: 700;
+}
+
+.f_lang {
+    border-bottom: 1px solid #aaa;
+}
+
+.f_lang p a {
+    font-size: 11px;
+    color: #666;
+}
+
+.f_lang p a::after {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-left: 1px solid  #aaa;
+    border-bottom: 1px solid  #aaa;
+    transform: rotate(-45deg);
+    vertical-align: top;
+    margin-top: 6px;
+    margin-left: 5px;
+}
+
+.f2 {
+    margin: 0 20px 25px 20px;
+}
+
+.f2 p a {
+    font-size: 11px;
+    color: #444;
+}
+
+.f2 p a::after {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-left: 1px solid  #666;
+    border-bottom: 1px solid  #666;
+    transform: rotate(-45deg);
+    vertical-align: top;
+    margin-top: 6px;
+    margin-left: 5px;
+}
+
+.f3 {
+    font-size: 11px;
+    color: #666;
+    margin: 0 20px 20px 20px;
+}
+
+.f4 {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #f8f8f8;
+    display: flex;
+    padding: 15px 0;
+}
+
+.f4 p {
+    width: 50%; /* 퍼센트로 들어가면 box-sizing을 써주는 것이 좋다. */
+    box-sizing: border-box;
+}
+
+.f4 p:first-child {
+    border-right: 1px solid #ccc;
+}
+
+.f4 p a {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    color: #666;
+}
+
+.btn_top {
+    position: fixed;
+    right: 20px;
+    bottom: 95px;
+}
+
+.btn_top  a {
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 11px 0 0 12px;
+    box-sizing: border-box; /* padding으로 인해 원의 크기가 커지는 것을 방지 */
+}
+
+.btn_top a span {
+    display: block;
+    width: 18px;
+    height: 21px;
+    background-image: url(../img/sp_common.png);
+    text-indent: -999999999999px;
+    background-size: 400px auto;
+    background-position: -104px -373px;
+}
